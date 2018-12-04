@@ -12,7 +12,7 @@ mip-chinacn-gallery 可滑动的图片列表
 
 ### 基本用法
 ```html
-<mip-chinacn-gallery num="5" between="5">
+<mip-chinacn-gallery num="5" between="5" free>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -68,9 +68,9 @@ mip-chinacn-gallery 可滑动的图片列表
 
 说明：设置slider容器能够同时显示的slides数量
 必选项：否
-类型：数字
-取值范围：>0
-默认值：5
+类型：数字或auto
+取值范围：>0,auto
+默认值：1
 
 ### between
 
@@ -79,7 +79,12 @@ mip-chinacn-gallery 可滑动的图片列表
 类型：数字
 取值范围：>0
 单位：px
-默认值：5
+默认值：0
+
+### free
+
+说明：free模式，slide会根据惯性滑动且不会贴合
+必选项：否
 
 ## 注意事项
 

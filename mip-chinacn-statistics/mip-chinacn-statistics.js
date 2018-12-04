@@ -14,17 +14,13 @@ define(function(require) {
     customElement.prototype.firstInviewCallback = function() {
         var data = {};
         // 页面地址
-        data.url = location.href;
+        data.url = encodeURIComponent(location.href);
         // 来源
-        data.referrer = document.referrer;
-        // ua
-        data.userAgent = navigator.userAgent;
-        // 请求地址
-        var src = this.element.getAttribute('src');
+        data.referrer = encodeURIComponent(document.referrer);
         // 页面类型
         var page = this.element.getAttribute('page');
         // 请求
-        fetch(src, {
+        fetch('https://api.china.cn/dms/s.php', {
             method: 'POST',
             body: 'type=mip&page=' + page + '&str=' + JSON.stringify(data),
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
